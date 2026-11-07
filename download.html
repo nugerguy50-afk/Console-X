@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download – Jpk Console X</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Jpk Console <span>X</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="download.html" aria-current="page">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="dl-head">
+    <h1>Ready to download?</h1>
+    <p>Pick a file from the list and press Download.</p>
+  </div>
+
+  <ul class="dl-list">
+    <li class="dl-item">
+      <div class="dl-info">
+        <strong>InstaIler.exe</strong>
+        <span>Jpk Console X installer for Windows</span>
+      </div>
+      <div class="dl-meta">Windows &middot; .exe</div>
+      <a class="btn" href="downloads/InstaIler.exe" download="InstaIler.exe">Download</a>
+    </li>
+    <!-- To add another file, copy the <li> above and change the name and link. -->
+  </ul>
+
+  <p class="note">If Windows shows a SmartScreen warning, choose "More info" and then "Run anyway" only if you trust this file.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap">&copy; <span id="y">2026</span> Jpk Console X</div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('a[download]').forEach(a => {
+    a.addEventListener('click', () => {
+      toast.textContent = 'Download started: ' + a.getAttribute('download');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    });
+  });
+</script>
+</body>
+</html>
